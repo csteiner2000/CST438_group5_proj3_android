@@ -20,3 +20,5 @@ Retrofit: https://guides.codepath.com/android/consuming-apis-with-retrofit
 OAuth2: https://developer.android.com/training/id-auth/authenticate
 
 Android Security library: https://developer.android.com/jetpack/androidx/releases/security
+
+![](https://i.imgur.com/QNCHC9a.jpg)
