@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:padding="10dp"
     android:background="#fcfcfc"
-    android:gravity="center"
+    android:gravity="top"
     android:id="@+id/ll">
     <LinearLayout
         android:clipToPadding="false"
@@ -33,7 +33,7 @@
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/cerclebackgroundred"
+                    android:background="@drawable/circlebackgroundred"
                     android:src="@drawable/ic_launcher_foreground"
                     android:padding="10dp"/>
                 <TextView
@@ -57,6 +57,13 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:nestedScrollingEnabled="true"
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"/>
     <!-- Extra lay outs and buttons
     <LinearLayout
         android:clipToPadding="false"
