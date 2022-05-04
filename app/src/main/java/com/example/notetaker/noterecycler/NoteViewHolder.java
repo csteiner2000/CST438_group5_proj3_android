@@ -9,22 +9,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.notetaker.R;
 
 public class NoteViewHolder extends RecyclerView.ViewHolder {
-    TextView examName;
-    TextView examMessage;
-    TextView examDate;
+    TextView noteTitle;
+    TextView noteDate;
+    TextView noteTextShort;
     View view;
 
     NoteViewHolder(View itemView) {
         super(itemView);
-        examName
-                = (TextView)itemView
-                .findViewById(R.id.examName);
-        examDate
-                = (TextView)itemView
-                .findViewById(R.id.examDate);
-        examMessage
-                = (TextView)itemView
-                .findViewById(R.id.examMessage);
+        noteTitle = (TextView)itemView.findViewById(R.id.noteTitle);
+        noteDate = (TextView)itemView.findViewById(R.id.noteDate);
+        noteTextShort = (TextView)itemView.findViewById(R.id.noteTextShort);
         view  = itemView;
     }
 }

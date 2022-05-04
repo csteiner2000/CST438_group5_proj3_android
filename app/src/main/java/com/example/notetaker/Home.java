@@ -36,17 +36,16 @@ public class Home extends AppCompatActivity {
     // Sample data for RecyclerView
     private List<NoteData> getData() {
         List<NoteData> list = new ArrayList<>();
-        list.add(new NoteData("First Exam", "May 23, 2015"));
-        list.add(new NoteData("Second Exam", "June 09, 2015"));
-        list.add(new NoteData("My Test Exam", "April 27, 2017"));
-
+        list.add(new NoteData("First Note", "May 23, 2015"));
+        list.add(new NoteData("Second Note", "June 09, 2015"));
+        list.add(new NoteData("Third Note", "April 27, 2017"));
         return list;
     }
 
     public class ClickListener {
-        public void click(int noteID) {
+        public void click(int noteIndex) {
             Intent intent = new Intent(getApplicationContext(), UpdateNote.class);
-            intent.putExtra("noteID", noteID);
+            intent.putExtra("noteIndex", noteIndex);
             startActivity(intent);
         }
     }

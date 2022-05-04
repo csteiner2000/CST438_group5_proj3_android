@@ -39,8 +39,8 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteViewHolder> {
     @Override
     public void onBindViewHolder(final NoteViewHolder viewHolder, final int position) {
         final int index = viewHolder.getAdapterPosition();
-        viewHolder.examName.setText(notes.get(position).note);
-        viewHolder.examDate.setText(notes.get(position).date);
+        viewHolder.noteTitle.setText(notes.get(position).note);
+        viewHolder.noteDate.setText(notes.get(position).date);
         viewHolder.view.setOnClickListener(v -> listener.click(index));
     }
 
