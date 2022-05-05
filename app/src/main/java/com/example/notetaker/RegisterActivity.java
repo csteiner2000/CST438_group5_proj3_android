@@ -96,6 +96,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<String> call, Throwable t) {
 
+
             }
         });
     }
