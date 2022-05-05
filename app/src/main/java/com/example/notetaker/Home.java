@@ -4,9 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
 
 import com.example.notetaker.noterecycler.NoteAdapter;
 import com.example.notetaker.noterecycler.NoteData;
@@ -16,7 +15,7 @@ import java.util.List;
 
 public class Home extends AppCompatActivity {
     RecyclerView recyclerView;
-    View.OnClickListener onClickListener;
+    ClickListener listener;
     NoteAdapter adapter;
 
     @Override
@@ -26,16 +25,10 @@ public class Home extends AppCompatActivity {
 
         List<NoteData> list = getData();
 
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        listener = new ClickListener();
+        adapter = new NoteAdapter(list, getApplicationContext(), listener);
 
-        onClickListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(Home.this, "Clicked note", Toast.LENGTH_SHORT).show();
-            }
-        };
-
-        adapter = new NoteAdapter(list, getApplicationContext(), onClickListener);
+        recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(Home.this));
     }
@@ -43,10 +36,17 @@ public class Home extends AppCompatActivity {
     // Sample data for RecyclerView
     private List<NoteData> getData() {
         List<NoteData> list = new ArrayList<>();
-        list.add(new NoteData("First Exam", "May 23, 2015"));
-        list.add(new NoteData("Second Exam", "June 09, 2015"));
-        list.add(new NoteData("My Test Exam", "April 27, 2017"));
-
+        list.add(new NoteData("First Note", "May 23, 2015"));
+        list.add(new NoteData("Second Note", "June 09, 2015"));
+        list.add(new NoteData("Third Note", "April 27, 2017"));
         return list;
+    }
+
+    public class ClickListener {
+        public void click(int noteIndex) {
+            Intent intent = new Intent(getApplicationContext(), UpdateNote.class);
+            intent.putExtra("noteIndex", noteIndex);
+            startActivity(intent);
+        }
     }
 }

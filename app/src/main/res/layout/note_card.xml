@@ -7,7 +7,7 @@
 
     <TextView
         android:layout_width="200dp"
-        android:id="@+id/examName"
+        android:id="@+id/noteTitle"
         android:textSize="16sp"
         android:layout_marginStart="20dp"
         android:text="First Note"
@@ -21,17 +21,17 @@
         android:id="@+id/examPic"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_below="@+id/examName"
+        android:layout_below="@+id/noteTitle"
         android:layout_marginStart="20dp"
         android:layout_marginTop="7dp"
-        app:srcCompat="@drawable/circlebackgroundred"/>/>
+        app:srcCompat="@drawable/circlebackgroundred"/>
 
     <TextView
-        android:id="@+id/examDate"
+        android:id="@+id/noteDate"
         android:layout_toEndOf="@+id/examPic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/examName"
+        android:layout_below="@+id/noteTitle"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="10dp"
@@ -43,17 +43,17 @@
         android:id="@+id/examPic2"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_below="@+id/examDate"
+        android:layout_below="@+id/noteDate"
         android:layout_marginStart="20dp"
         android:layout_marginTop="7dp"
         app:srcCompat="@drawable/circlebackgroundred"/>
 
     <TextView
-        android:id="@+id/examMessage"
+        android:id="@+id/noteTextShort"
         android:layout_toEndOf="@+id/examPic2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/examDate"
+        android:layout_below="@+id/noteDate"
         android:layout_marginEnd="20dp"
         android:layout_marginTop="5dp"
         android:layout_marginStart="10dp"
