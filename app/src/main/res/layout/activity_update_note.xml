@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:gravity="center_horizontal"
     tools:context=".UpdateNote">
 
     <TextView
@@ -16,6 +19,39 @@
         android:textColor="@color/black"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="40dp"
+        />
+
+    <EditText
+        android:id="@+id/newTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="New title"
+        android:textSize="25dp"
+        android:layout_marginBottom="30dp"
+        />
+
+    <EditText
+        android:id="@+id/newNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:lines="6"
+        android:gravity="top"
+        android:hint="New Note"
+        android:overScrollMode="always"
+        android:scrollbars="vertical"
+        android:scrollbarStyle="insideInset"
+        android:scrollHorizontally="false"
+        android:layout_marginBottom="30dp"
+        />
+
+    <Button
+        android:id="@+id/update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Changes"
+        android:textSize="20dp"
+        android:backgroundTint="@color/teal_700"
         />
 
 
