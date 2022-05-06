@@ -1,6 +1,7 @@
 package com.example.notetaker.noterecycler;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,9 +40,13 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteViewHolder> {
     @Override
     public void onBindViewHolder(final NoteViewHolder viewHolder, final int position) {
         final int index = viewHolder.getAdapterPosition();
-        viewHolder.noteTitle.setText(notes.get(position).noteTitle);
+        viewHolder.noteTitle.setText(notes.get(position).title);
         viewHolder.noteDate.setText(notes.get(position).date);
-        viewHolder.noteDate.setText(notes.get(position).noteText.substring(0, 20));
+
+        String noteText = notes.get(position).text;
+        int min = Math.min(noteText.length(), 20);
+        viewHolder.noteTextShort.setText(noteText.substring(0, min));
+
         viewHolder.view.setOnClickListener(v -> listener.click(index));
     }
 

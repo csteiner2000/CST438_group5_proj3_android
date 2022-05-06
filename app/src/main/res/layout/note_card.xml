@@ -10,7 +10,7 @@
         android:id="@+id/noteTitle"
         android:textSize="16sp"
         android:layout_marginStart="20dp"
-        android:text="First Note"
+        android:text="@string/note_title_default"
         android:textColor="@color/black"
         android:layout_marginEnd="20dp"
         android:maxLines="1"
@@ -36,7 +36,8 @@
         android:layout_marginEnd="20dp"
         android:layout_marginStart="10dp"
         android:gravity="center"
-        android:text="April 25, 2022"
+        android:text="@string/date_format"
+        android:textColor="@color/black"
         android:textSize="16sp"/>
 
     <ImageView
@@ -58,7 +59,8 @@
         android:layout_marginTop="5dp"
         android:layout_marginStart="10dp"
         android:gravity="center"
-        android:text="Text...."
+        android:text="@string/note_text_default"
+        android:textColor="@color/black"
         android:textSize="16sp"/>
 
 

@@ -36,9 +36,12 @@ public class Home extends AppCompatActivity {
     // Sample data for RecyclerView
     private List<NoteData> getData() {
         List<NoteData> list = new ArrayList<>();
-        list.add(new NoteData("First Note", "May 23, 2015"));
-        list.add(new NoteData("Second Note", "June 09, 2015"));
-        list.add(new NoteData("Third Note", "April 27, 2017"));
+//        list.add(new NoteData("First Note", "May 23, 2015"));
+//        list.add(new NoteData("Second Note", "June 09, 2015"));
+//        list.add(new NoteData("Third Note", "April 27, 2017"));
+        list.add(new NoteData("First Note", "May 23, 2015", "This is the text for the first note"));
+        list.add(new NoteData("Second Note", "June 09, 2015", " text and more text, nice"));
+        list.add(new NoteData("Third Note", "April 27, 2017", "example"));
         return list;
     }
 

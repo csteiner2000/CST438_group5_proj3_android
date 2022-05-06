@@ -1,18 +1,18 @@
 package com.example.notetaker.noterecycler;
 
 public class NoteData {
-    String noteTitle;
-    String noteText;
+    String title;
     String date;
+    String text;
 
-    public NoteData(String noteTitle, String date, String noteText) {
-        this.noteTitle = noteTitle;
+    public NoteData(String title, String date, String text) {
+        this.title = title;
         this.date = date;
-        this.noteText = noteText;
+        this.text = text;
     }
 
-    public NoteData(String noteText, String date) {
-        this.noteText = noteText;
+    public NoteData(String text, String date) {
+        this.text = text;
         this.date = date;
     }
 }
