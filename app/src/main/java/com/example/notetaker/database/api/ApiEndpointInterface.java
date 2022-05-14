@@ -1,7 +1,9 @@
 package com.example.notetaker.database.api;
 
 import com.example.notetaker.database.models.User;
+import com.example.notetaker.noterecycler.NoteData;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
@@ -17,4 +19,7 @@ public interface ApiEndpointInterface {
             @Query("uName") String username,
             @Query("pWord") String password
     );
+
+    @GET("https://arcane-crag-19565.herokuapp.com/api/note/all")
+    Call<List<NoteData>> getAllNotes(@Query("userId") int userId);
 }
