@@ -10,7 +10,6 @@ import android.util.Log;
 
 import com.example.notetaker.database.RetrofitClientInstance;
 import com.example.notetaker.database.api.ApiEndpointInterface;
-import com.example.notetaker.database.models.User;
 import com.example.notetaker.noterecycler.NoteAdapter;
 import com.example.notetaker.noterecycler.NoteData;
 
@@ -33,7 +32,6 @@ public class Home extends AppCompatActivity {
 
 
         ApiEndpointInterface api = RetrofitClientInstance.getRetrofitInstance().create(ApiEndpointInterface.class);
-        Call<User.ApiResponse> call = api.getUser("1", "1");
         Call<List<NoteData>> call1 = api.getAllNotes(1);
         call1.enqueue(new Callback<List<NoteData>>() {
             @Override
