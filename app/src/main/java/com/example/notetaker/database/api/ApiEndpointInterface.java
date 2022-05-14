@@ -12,8 +12,8 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface ApiEndpointInterface {
-    @GET("https://arcane-crag-19565.herokuapp.com/login/test")
-    Call<User> getUser(
+    @GET("https://arcane-crag-19565.herokuapp.com/api/login")
+    Call<User.ApiResponse> getUser(
             @Query("uName") String username,
             @Query("pWord") String password
     );
