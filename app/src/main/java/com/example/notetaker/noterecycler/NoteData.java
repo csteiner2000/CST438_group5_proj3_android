@@ -1,9 +1,15 @@
 package com.example.notetaker.noterecycler;
 
+import com.google.gson.annotations.SerializedName;
+
 public class NoteData {
-    String title;
-    String date;
-    String text;
+    @SerializedName("noteTitle")
+    public String title;
+    public String date;
+    @SerializedName("noteText")
+    public String text;
+    @SerializedName("editTime")
+    public String editTime;
 
     public NoteData(String title, String date, String text) {
         this.title = title;
