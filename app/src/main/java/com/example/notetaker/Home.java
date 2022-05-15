@@ -1,20 +1,19 @@
 package com.example.notetaker;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.util.Log;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-
 import com.example.notetaker.database.RetrofitClientInstance;
 import com.example.notetaker.database.api.ApiEndpointInterface;
-import com.example.notetaker.database.models.User;
 import com.example.notetaker.noterecycler.NoteAdapter;
 import com.example.notetaker.noterecycler.NoteData;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -31,9 +30,20 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        // Get which user is logged in right now from shared preferences
+        // TODO: add a way to log out
+        SharedPreferences shared = getSharedPreferences("noteTaker", MODE_PRIVATE);
+        int userId = shared.getInt("userId", -1);
+        Log.d("SharedPreferences", "userId stored in SharedPreferences: " + userId);
+
+        if (userId == -1) {
+            Log.d("SharedPreferences", "Could not get userId value from shared preferences");
+            Intent intent = new Intent(Home.this, LoginActivity.class);
+            intent.putExtra("fatalError", "You need to be logged in to view your notes");
+            startActivity(intent);
+        }
 
         ApiEndpointInterface api = RetrofitClientInstance.getRetrofitInstance().create(ApiEndpointInterface.class);
-        Call<User.ApiResponse> call = api.getUser("1", "1");
         Call<List<NoteData>> call1 = api.getAllNotes(1);
         call1.enqueue(new Callback<List<NoteData>>() {
             @Override
