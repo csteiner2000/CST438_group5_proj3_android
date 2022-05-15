@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -44,10 +45,10 @@ public class Home extends AppCompatActivity {
         }
 
         ApiEndpointInterface api = RetrofitClientInstance.getRetrofitInstance().create(ApiEndpointInterface.class);
-        Call<List<NoteData>> call1 = api.getAllNotes(1);
+        Call<List<NoteData>> call1 = api.getAllNotes(userId);
         call1.enqueue(new Callback<List<NoteData>>() {
             @Override
-            public void onResponse(Call<List<NoteData>> call, Response<List<NoteData>> response) {
+            public void onResponse(@NonNull Call<List<NoteData>> call, @NonNull Response<List<NoteData>> response) {
                 List<NoteData> list = response.body();
                 if (list == null) {
                     Log.d("Data_response", "onFailure: " + call);
@@ -63,7 +64,7 @@ public class Home extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<List<NoteData>> call, Throwable t) {
+            public void onFailure(@NonNull Call<List<NoteData>> call, @NonNull Throwable t) {
                 Log.d("Data_response", "onFailure: " + call);
                 Log.d("Data_response", "onFailure: failed to get an api response");
             }
