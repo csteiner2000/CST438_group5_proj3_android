@@ -1,8 +1,11 @@
 package com.example.notetaker.database.api;
 
+import com.example.notetaker.database.models.EditTimeResponse;
 import com.example.notetaker.database.models.LoginResponse;
 import com.example.notetaker.noterecycler.NoteData;
 
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.List;
 
 import retrofit2.Call;
@@ -18,4 +21,7 @@ public interface ApiEndpointInterface {
 
     @GET("https://arcane-crag-19565.herokuapp.com/api/note/all")
     Call<List<NoteData>> getAllNotes(@Query("userId") int userId);
+
+    @GET("https://arcane-crag-19565.herokuapp.com/api/note/timestamp")
+    Call<EditTimeResponse> getEditTime(@Query("noteId") int noteId);
 }
