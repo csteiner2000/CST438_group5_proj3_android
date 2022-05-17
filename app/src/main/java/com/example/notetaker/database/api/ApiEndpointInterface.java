@@ -9,7 +9,10 @@ import java.sql.Timestamp;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
+import retrofit2.http.Field;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface ApiEndpointInterface {
@@ -24,4 +27,12 @@ public interface ApiEndpointInterface {
 
     @GET("https://arcane-crag-19565.herokuapp.com/api/note/timestamp")
     Call<EditTimeResponse> getEditTime(@Query("noteId") int noteId);
+
+    @GET("https://arcane-crag-19565.herokuapp.com/api/note/update")
+    Call<Void> updateNote(
+            @Field("noteId") int noteId,
+            @Field("title") String title,
+            @Field("text") String text
+    );
+
 }
