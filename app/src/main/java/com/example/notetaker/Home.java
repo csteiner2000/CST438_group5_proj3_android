@@ -15,6 +15,7 @@ import com.example.notetaker.database.api.ApiEndpointInterface;
 import com.example.notetaker.noterecycler.NoteAdapter;
 import com.example.notetaker.noterecycler.NoteData;
 
+import java.io.Serializable;
 import java.util.List;
 
 import retrofit2.Call;
@@ -72,7 +73,7 @@ public class Home extends AppCompatActivity {
     }
 
     public class ClickListener {
-        public void click(int noteIndex) {
+        public void click(int noteIndex, List<NoteData> notes) {
             Intent intent = new Intent(getApplicationContext(), UpdateNote.class);
             intent.putExtra("noteIndex", noteIndex);
             startActivity(intent);

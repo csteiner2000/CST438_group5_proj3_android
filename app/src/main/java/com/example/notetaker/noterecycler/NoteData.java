@@ -17,8 +17,8 @@ public class NoteData {
         this.text = text;
     }
 
-    public NoteData(String text, String date) {
+    public NoteData(String title, String text) {
         this.text = text;
-        this.date = date;
+        this.date = title;
     }
 }

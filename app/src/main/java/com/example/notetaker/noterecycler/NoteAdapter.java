@@ -47,7 +47,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteViewHolder> {
         int min = Math.min(noteText.length(), 20);
         viewHolder.noteTextShort.setText(noteText.substring(0, min));
 
-        viewHolder.view.setOnClickListener(v -> listener.click(index));
+        viewHolder.view.setOnClickListener(v -> listener.click(index, notes));
     }
 
     public void setNotes(List<NoteData> notes) {
